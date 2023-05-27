@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.olointeria.wyrok.controllers.ListSentencesController">
+   <children>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
+         <children>
+            <Label text="%id.sygnature" />
+            <ComboBox fx:id="sygnatureComboBox" onAction="#filterOnAction" prefWidth="150.0" />
+            <Button mnemonicParsing="false" onAction="#clearSygnatureComboBox" text="X" />
+            <Label text="%paragraph.sygnature" />
+            <ComboBox fx:id="paragraphComboBox" onAction="#filterOnAction" prefWidth="150.0" />
+            <Button mnemonicParsing="false" onAction="#clearParagraphComboBox" text="X" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <TableView fx:id="sentencesTableView" maxHeight="1.7976931348623157E308" prefWidth="299.0">
+        <columns>
+          <TableColumn fx:id="sygnatureColumn" prefWidth="75.0" text="%id.sygnature" />
+          <TableColumn fx:id="paragraphColumn" maxWidth="-1.0" minWidth="60.0" prefWidth="60.0" text="%paragraph" />
+            <TableColumn fx:id="descriptionColumn" minWidth="230.0" prefWidth="-1.0" text="%desc.sygnature" />
+            <TableColumn fx:id="maxSentenceColumn" prefWidth="75.0" text="%max.sentence" />
+            <TableColumn fx:id="minSentenceColumn" prefWidth="75.0" text="%min.sentence" />
+            <TableColumn fx:id="deleteColumn" maxWidth="-1.0" minWidth="50.0" prefWidth="100.0" text="%delete" />
+            <TableColumn fx:id="editColumn" maxWidth="-1.0" minWidth="50.0" prefWidth="100.0" text="%edit" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <HBox alignment="TOP_RIGHT" prefWidth="429.0" spacing="10.0">
+         <children>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#countSentencesOnAction" prefHeight="40.0" text="%count.sentence" textAlignment="CENTER" textFill="#512323">
+               <padding>
+                  <Insets right="50.0" />
+               </padding>
+               <font>
+                  <Font name="Calisto MT Bold Italic" size="14.0" />
+               </font></Button>
+            <Label text="%count.sentenceMax">
+               <padding>
+                  <Insets left="50.0" />
+               </padding></Label>
+            <TextField fx:id="maxSentenceTextField" prefHeight="25.0" prefWidth="268.0" />
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="TOP_RIGHT" layoutX="20.0" layoutY="265.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <TextArea editable="false" prefHeight="37.0" prefWidth="143.0" visible="false" />
+            <Label layoutX="100.0" text="%count.sentenceMin">
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="minSentenceTextField" layoutX="100.0" layoutY="100.0" HBox.hgrow="NEVER">
+               <opaqueInsets>
+                  <Insets left="100.0" />
+               </opaqueInsets>
+            </TextField>
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.olointeria.wyrok.controllers.ParagraphController">
+   <children>
+      <HBox spacing="20.0">
+         <children>
+            <Label text="%name.paragraph" />
+            <TextField fx:id="paragraphTextField" />
+            <Button fx:id="addParagraphButton" mnemonicParsing="false" onAction="#addParagraphOnAction" text="%add.button" />
+            <Label text="%choose.paragraph" />
+            <ComboBox fx:id="chooseParagrahComboBox" onAction="#OnActionComboBox" prefWidth="150.0" />
+            <Button fx:id="editParagraphButton" mnemonicParsing="false" onAction="#editParagraphOnAction" text="%edit.button" />
+            <Button fx:id="deleteParagraphButton" mnemonicParsing="false" onAction="#deleteParagraphOnAction" text="%delete.button" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <TreeView fx:id="paragraphTreeView" maxHeight="1.7976931348623157E308" prefWidth="200.0" showRoot="false" />
+   </children>
+</VBox>
